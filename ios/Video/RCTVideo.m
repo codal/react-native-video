@@ -888,7 +888,7 @@ static int const RCTVideoUnset = -1;
   _pictureInPicture = pictureInPicture;
   if (_pipController && _pictureInPicture && ![_pipController isPictureInPictureActive]) {
     dispatch_async(dispatch_get_main_queue(), ^{
-      [_pipController startPictureInPicture];
+      [_pipController stopPictureInPicture];
     });
   } else if (_pipController && !_pictureInPicture && [_pipController isPictureInPictureActive]) {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -910,8 +910,8 @@ static int const RCTVideoUnset = -1;
 - (void)setupPipController {
   if (!_pipController && _playerLayer && [AVPictureInPictureController isPictureInPictureSupported]) {
     // Create new controller passing reference to the AVPlayerLayer
-    _pipController = [[AVPictureInPictureController alloc] initWithPlayerLayer:_playerLayer];
-    _pipController.delegate = self;
+    // _pipController = [[AVPictureInPictureController alloc] initWithPlayerLayer:_playerLayer];
+    // _pipController.delegate = self;
   }
 }
 #endif
