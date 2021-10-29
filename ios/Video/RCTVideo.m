@@ -154,7 +154,6 @@ static int const RCTVideoUnset = -1;
                                              withPlayerItem:(AVPlayerItem*)playerItem {
   RCTVideoPlayerViewController* viewController = [[RCTVideoPlayerViewController alloc] init];
   viewController.showsPlaybackControls = YES;
-  viewController.allowsPictureInPicturePlayback= false;
   viewController.rctDelegate = self;
   viewController.preferredOrientation = _fullscreenOrientation;
   
